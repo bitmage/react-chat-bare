@@ -6,8 +6,6 @@
     getInitialState: function() {
       return {
         name: null,
-        chatHistory: [],
-        debug: false
       }
     },
     render: function() {

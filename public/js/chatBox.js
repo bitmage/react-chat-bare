@@ -6,7 +6,6 @@
       return {
         history: [],
         debug: false,
-        name: this.props.name,
       };
     },
     componentWillMount: function() {
@@ -42,7 +41,7 @@
 
       if (this.state.message !== '') {
         chatApi.sendChat({
-          name: this.state.name,
+          name: this.props.name,
           message: this.state.message
         });
 
@@ -88,7 +87,7 @@
         }, [
             this.renderChatMessage({
               name: 'System',
-              message: "Welcome, " + this.state.name + "!" })
+              message: "Welcome, " + this.props.name + "!" })
            ].concat(this.state.history.map(this.renderChatMessage))),
         r.div({
           className: 'controls'
